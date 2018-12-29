@@ -4,7 +4,7 @@
 #
 Name     : QtAwesome
 Version  : 0.4.4
-Release  : 10
+Release  : 11
 URL      : https://pypi.python.org/packages/28/be/cadd6e06a6219f31d6153eb43e9f17dadb7c968835b10180a7bca39ae8ab/QtAwesome-0.4.4.tar.gz
 Source0  : https://pypi.python.org/packages/28/be/cadd6e06a6219f31d6153eb43e9f17dadb7c968835b10180a7bca39ae8ab/QtAwesome-0.4.4.tar.gz
 Summary  : FontAwesome icons in PyQt and PySide applications
