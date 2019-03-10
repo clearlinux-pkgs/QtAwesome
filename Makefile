@@ -1,5 +1,5 @@
 PKG_NAME := QtAwesome
-URL = https://files.pythonhosted.org/packages/e0/bb/958f0eabf721e91293bf745b5d785a44d3bea3a8fe8150fc58a0c0c567c2/QtAwesome-0.5.6.tar.gz
+URL = https://files.pythonhosted.org/packages/17/1e/04835663fe9092bb856ed8ce8251f8ee363a39b313f688ca24a1ebaefa81/QtAwesome-0.5.7.tar.gz
 ARCHIVES = 
 
 include ../common/Makefile.common
