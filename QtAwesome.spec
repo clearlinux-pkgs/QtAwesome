@@ -4,7 +4,7 @@
 #
 Name     : QtAwesome
 Version  : 0.5.8
-Release  : 21
+Release  : 22
 URL      : https://files.pythonhosted.org/packages/b5/a0/d5d10e6a51dedd547eb9af0e224eed07f492ffa21030e6b89aed7cbb1e6a/QtAwesome-0.5.8.tar.gz
 Source0  : https://files.pythonhosted.org/packages/b5/a0/d5d10e6a51dedd547eb9af0e224eed07f492ffa21030e6b89aed7cbb1e6a/QtAwesome-0.5.8.tar.gz
 Summary  : FontAwesome icons in PyQt and PySide applications
@@ -54,6 +54,7 @@ python components for the QtAwesome package.
 Summary: python3 components for the QtAwesome package.
 Group: Default
 Requires: python3-core
+Provides: pypi(QtAwesome)
 
 %description python3
 python3 components for the QtAwesome package.
@@ -61,13 +62,15 @@ python3 components for the QtAwesome package.
 
 %prep
 %setup -q -n QtAwesome-0.5.8
+cd %{_builddir}/QtAwesome-0.5.8
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1564064583
+export SOURCE_DATE_EPOCH=1583218127
+# -Werror is for werrorists
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
 export FCFLAGS="$CFLAGS -fno-lto "
@@ -80,7 +83,7 @@ python3 setup.py build
 export MAKEFLAGS=%{?_smp_mflags}
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/QtAwesome
-cp LICENSE %{buildroot}/usr/share/package-licenses/QtAwesome/LICENSE
+cp %{_builddir}/QtAwesome-0.5.8/LICENSE %{buildroot}/usr/share/package-licenses/QtAwesome/cde8ccad1073a4360ae14180a7cf4bc7e28980e9
 python3 -tt setup.py build  install --root=%{buildroot}
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
@@ -91,7 +94,7 @@ echo ----[ mark ]----
 
 %files license
 %defattr(0644,root,root,0755)
-/usr/share/package-licenses/QtAwesome/LICENSE
+/usr/share/package-licenses/QtAwesome/cde8ccad1073a4360ae14180a7cf4bc7e28980e9
 
 %files python
 %defattr(-,root,root,-)
